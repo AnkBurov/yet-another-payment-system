@@ -46,6 +46,10 @@ jacocoTestReport {
     }
 }
 
+coveralls {
+    sourceDirs += ['src/main/kotlin']
+}
+
 compileKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
