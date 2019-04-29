@@ -19,6 +19,16 @@ apply plugin: 'kotlin'
 
 group 'io.demo'
 
+jar {
+    manifest {
+        attributes "Main-Class": "io.demo.paymentsystem.StarterKt"
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
 repositories {
     mavenCentral()
 }
